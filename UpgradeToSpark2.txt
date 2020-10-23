@@ -1,0 +1,36 @@
+STEP 1: Download jdk1.8
+STEP 2: Download Spark2 CSD
+STEP 3: Start cloudera Manager (Express)
+STEP 4: Open terminal and run below commands
+STEP 5: sudo su
+STEP 6: service cloudera-scm-agent stop
+STEP 7: service cloudera-scm-server stop
+STEP 8: cp ~/Downloads/jdk1.8.... /usr/java
+STEP 9: cd /usr/java
+STEP 10: tar xvf jdk1.8....
+STEP 11: mv jdk1.8... java8
+STEP 12: vi ~/.bash_profile
+STEP 13: Add following in the file
+	JAVA_HOME=/usr/java/java8
+	export JAVA_HOME
+	PATH=/usr/java/java8/bin:....
+	:x!
+STEP 14: . ~/.bash_profile
+STEP 15: vi /etc/default/cloudera-scm-server
+STEP 16: export JAVA_HOME=/usr/java/java8
+	 :x!
+STEP 17: Configure JAVA_HOME in /etc/profile and /etc/bashrc
+STEP 18: source ~/.bashrc
+STEP 19: service cloudera-scm-server start
+STEP 20: service cloudera-scm-agent start
+STEP 21: Login to Cloudera Manager UI (Username: cloudera, Password: cloudera)
+STEP 22: cd ~/Downloads
+STEP 23: cp <Spark2csd> /opt/cloudera/csd
+STEP 24: chown cloudera-scm:cloudera-scm <spark2csd> (make sure permission is 644)
+STEP 25: HOST-> All Host -> Configuration -> search java -> add path(JAVA_HOME /usr/java/java8) --> CM UI
+STEP 26: Parcels -> uncheck validate checkbox and save --> CM UI
+STEP 27: Restart agent and server
+STEP 28: Download, distribute and activate Spark2 parcel and then CDH5 parcel
+STEP 29: Restart 
+STEP 30: Add service --> spark2 Hive --> select host... --> ...
+
